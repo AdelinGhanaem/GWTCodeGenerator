@@ -1,0 +1,17 @@
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="gwtgenerator">
+
+  <!-- Inherit the core Web Toolkit stuff.                  -->
+  <inherits name='com.google.gwt.user.User'/>
+
+  <!-- Specify the app entry point class.                   -->
+  <entry-point class='com.clouway.gwtgenerator.client.GwtGenerator'/>
+
+  <generate-with class="com.clouway.gwtgenerator.client.FormGenerator">
+
+    <when-type-assignable class="com.clouway.gwtgenerator.client.FormBinder"/>
+
+  </generate-with>
+
+</module>
