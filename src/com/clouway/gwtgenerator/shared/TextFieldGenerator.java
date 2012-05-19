@@ -10,7 +10,7 @@ import com.google.gwt.uibinder.rebind.IndentedWriter;
 public class TextFieldGenerator extends FieldGenerator {
   @Override
   public void write(JField field, FormField formField, IndentedWriter writer) {
-    writer.write("component.%1$s.setEnabled(true);", field.getName());
+    writer.write("component.%1$s.setEnabled(false);", field.getName());
     writer.write("component.%1$s.setText(\"%2$s\");", field.getName(), formField.defaultText());
     writer.write("component.%1$s.setName(\"%1$s\");", field.getName());
   }

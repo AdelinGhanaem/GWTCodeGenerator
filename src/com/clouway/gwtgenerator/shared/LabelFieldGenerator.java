@@ -14,4 +14,5 @@ public class LabelFieldGenerator extends FieldGenerator {
   public void write(JField field, FormField formField, IndentedWriter writer) {
     writer.write("component.%1$s.setText(\"%2$s\");", field.getName(), formField.defaultText());
   }
+
 }

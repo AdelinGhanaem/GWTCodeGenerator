@@ -15,6 +15,7 @@ public class FormGenerator extends MainGenerator {
 
   @Override
   protected void doGenerate(JClassType interfaceType, String implName, IndentedWriter writer) {
+    //This JParameter returns  the bind method(MyView view) parameter
     JParameter[] jParameter = extractInterfaceMethodParams(interfaceType);
     writeImports(writer, jParameter);
     writeClassIntro(interfaceType, implName, writer);
@@ -26,7 +27,7 @@ public class FormGenerator extends MainGenerator {
 
 
   private void writeFieldsBinding(JClassType interfaceType, IndentedWriter writer) {
-
+    JClassType type = interfaceType.getEnclosingType();
     JField[] jFields = interfaceType.getEnclosingType().getFields();
     for (JField field : jFields) {
       FormField annotation = field.getAnnotation(FormField.class);
@@ -40,6 +41,7 @@ public class FormGenerator extends MainGenerator {
   }
 
   private void writeMethodIntro(IndentedWriter writer, JParameter[] jParameter) {
+    String methodIntro = "public void bind(%1$s component) {" + jParameter[0].getType().getQualifiedSourceName();
     writer.write("public void bind(%1$s component) {", jParameter[0].getType().getQualifiedSourceName());
     writer.indent();
   }

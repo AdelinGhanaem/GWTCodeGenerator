@@ -34,6 +34,7 @@ public class MyView {
       return "ONE TWO THREE";
     }
   });
+
   @FormField(styleName = "label", parentAccessor = "htmlPanel", defaultText = "XXXX !")
   Label label;
 

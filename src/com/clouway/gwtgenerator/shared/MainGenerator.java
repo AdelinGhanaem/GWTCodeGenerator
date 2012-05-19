@@ -55,7 +55,8 @@ public abstract class MainGenerator extends Generator {
       doGenerate(classType, implName, indentedWriter);
       printWriterManager.commit();
     }
-    return packageName + "." + implName;
+    String className = packageName + "." + implName;
+    return className;
   }
 
   protected abstract void doGenerate(JClassType type, String implementationName, IndentedWriter writer);
@@ -64,7 +65,7 @@ public abstract class MainGenerator extends Generator {
    * write a class Intro e.g [ public class ClassImplementationName implements Interface ]
    */
   protected void writeClassIntro(JClassType interfaceType, String implName, IndentedWriter writer) {
-
+    String classIntor = String.format("public class %1$s implements %2$s {\"", implName, interfaceType.getName());
     writer.write("public class %1$s implements %2$s {", implName, interfaceType.getName());
 
     writer.indent();

@@ -15,6 +15,4 @@ public class GwtGenerator implements EntryPoint {
     MyView myView = new MyView();
     RootLayoutPanel.get().add(myView.asWidget());
   }
-
-
 }
