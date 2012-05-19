@@ -17,7 +17,7 @@ public class FormGenerator extends MainGenerator {
   protected void doGenerate(JClassType interfaceType, String implName, IndentedWriter writer) {
     //This JParameter returns  the bind method(MyView view) parameter
     JParameter[] jParameter = extractInterfaceMethodParams(interfaceType);
-    writeImports(writer, jParameter);
+    writeImports(writer);
     writeClassIntro(interfaceType, implName, writer);
     writeFieldsIntro(writer);
     writeMethodIntro(writer, jParameter);
@@ -51,10 +51,10 @@ public class FormGenerator extends MainGenerator {
     writer.newline();
   }
 
-  private void writeImports(IndentedWriter writer, JParameter[] parameters) {
-    writer.write(IMPORT, GWT.class.getName());
+  private void writeImports(IndentedWriter writer) {
+    String gwtGetName = GWT.class.getName();
+    writer.write(IMPORT, gwtGetName);
     writer.newline();
-
   }
 
 
