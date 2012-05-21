@@ -1,16 +1,25 @@
 package com.clouway.gwtgenerator.client;
 
+import com.google.gwt.event.dom.client.HasClickHandlers;
+import com.google.gwt.user.client.ui.HTMLPanel;
+
 /**
  * @author Adelin Ghanayem adelin.ghanaem@clouway.com
  */
 public interface InputForm {
 
-
-  public String getPassword();
-
   public String getFirstName();
 
-  public void setPasswordInfo(String message);
+  public String getLastName();
 
-  public void setFirstNameInfo(String message);
+  public String getAddress();
+
+  public String getAge();
+
+  public String getHoppies();
+
+  public HasClickHandlers getSubmitButton();
+
+  public HTMLPanel getContainingPanel();
+
 }

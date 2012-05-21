@@ -1,7 +1,6 @@
-package com.clouway.gwtgenerator.client;
+package com.clouway.gwtgenerator.shared;
 
-import com.clouway.gwtgenerator.shared.FieldGeneratorFactory;
-import com.clouway.gwtgenerator.shared.MainGenerator;
+import com.clouway.gwtgenerator.client.FormField;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.JField;

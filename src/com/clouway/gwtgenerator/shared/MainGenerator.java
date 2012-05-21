@@ -56,6 +56,8 @@ public abstract class MainGenerator extends Generator {
       printWriterManager.commit();
     }
     String className = packageName + "." + implName;
+    String className2 = packageName + "." + implName;
+
     return className;
   }
 
