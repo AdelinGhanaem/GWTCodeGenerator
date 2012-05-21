@@ -10,12 +10,12 @@
   <!-- Specify the app entry point class.                   -->
   <entry-point class='com.clouway.gwtgenerator.client.GwtGenerator'/>
 
-  <!--<generate-with class="com.clouway.gwtgenerator.shared.FormGenerator">-->
-<!---->
-    <!--<when-type-assignable class="com.clouway.gwtgenerator.client.FormBinder"/>-->
-<!---->
-  <!--</generate-with>-->
-<!---->
+  <generate-with class="com.clouway.gwtgenerator.shared.FormGenerator">
+
+    <when-type-assignable class="com.clouway.gwtgenerator.client.FormBinder"/>
+
+  </generate-with>
+
 <!---->
   <generate-with class="com.clouway.gwtgenerator.shared.InputFormGenerator">
   <when-type-assignable class="com.clouway.gwtgenerator.client.InputForm"/>

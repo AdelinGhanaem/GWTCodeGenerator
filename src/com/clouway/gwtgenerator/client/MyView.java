@@ -7,6 +7,8 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
 
@@ -14,10 +16,13 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Adelin Ghanayem adelin.ghanaem@clouway.com
  */
 public class MyView {
-//  interface InternalFormBinder extends FormBinder<MyView> {
-//  }
 
-//  private final InternalFormBinder binder = GWT.create(InternalFormBinder.class);
+
+  interface InternalFormBinder extends FormBinder<MyView> {
+  }
+
+  //
+  private final InternalFormBinder binder = GWT.create(InternalFormBinder.class);
 
   private HTMLPanel widgets = new HTMLPanel("main container !");
 
@@ -33,18 +38,15 @@ public class MyView {
 
   InputForm form = GWT.create(InputForm.class);
 
-//  InputForm form = new InputFormImpl();
-//  NewUserInputForm form = new NewUserInputFormImpl();
+  @FormField(styleName = "label", parentAccessor = "htmlPanel", defaultText = "XXXX !")
+  Label label;
 
-//  @FormField(styleName = "label", parentAccessor = "htmlPanel", defaultText = "XXXX !")
-//  Label label;
-//
-//  @FormField(styleName = "texbox", parentAccessor = "htmlPanel", defaultText = "XXXX")
-//  TextBox textBox;
+  @FormField(styleName = "texbox", parentAccessor = "htmlPanel", defaultText = "XXXX")
+  TextBox textBox;
 
 
   public MyView() {
-//    binder.bind(this);
+    binder.bind(this);
     htmlPanel.add(button);
     htmlPanel.add(form.getContainingPanel());
     widgets.add(htmlPanel);
@@ -63,7 +65,6 @@ public class MyView {
     });
     Button button = (Button) form.getSubmitButton();
     widgets.add(button);
-
 
     widgets.add(form.getContainingPanel());
 

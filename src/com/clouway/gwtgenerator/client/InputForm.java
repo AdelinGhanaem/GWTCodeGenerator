@@ -18,6 +18,10 @@ public interface InputForm {
 
   public String getHoppies();
 
+  public String getSomething();
+
+  public String getSomething2();
+
   public HasClickHandlers getSubmitButton();
 
   public HTMLPanel getContainingPanel();
